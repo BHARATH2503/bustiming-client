@@ -1,0 +1,36 @@
+.me-auto{
+    font-size:20px;
+    font-weight: bold;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    letter-spacing: 3px;
+    padding: 15px;
+}
+.link
+{
+   display: flex;
+   text-align: center;
+    justify-content:center;
+    text-decoration: none;
+    width:max-content;
+    color:whitesmoke;
+    padding-left: 50px;
+}
+.link:hover
+{
+    color:blanchedalmond;
+    
+    
+}
+.Brand{
+    text-decoration: none;
+}
+.logo{
+    text-decoration: none;
+    color: red;
+    font-weight: bolder;
+    margin-left:30px;
+    /* padding: 40px; */
+}
+a:hover{
+    color: red;
+}

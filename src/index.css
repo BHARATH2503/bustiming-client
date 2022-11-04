@@ -1,13 +1,29 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.Auth-form-container{
+    background-image: url("https://img.freepik.com/premium-vector/bus-stop-waiting-people-passenger-vector-illustration-city-transportation-public-transport-standing_109722-3896.jpg?w=996");
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar{
+    margin:0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: none;
 }
+.Bus{
+    background-image: url("https://img.freepik.com/premium-vector/bus-stop-waiting-people-passenger-vector-illustration-city-transportation-public-transport-standing_109722-3896.jpg?w=996");
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100%;
+    padding-bottom: 50px;   
+}
+
+/* .searchBus{
+    height:100%;
+    background-image:url("https://t3.ftcdn.net/jpg/01/10/03/32/240_F_110033258_YzOkT5EAnqxu9gY8jGtUyIsIVH0sMegk.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding: 50px;
+    opacity: 0.2px;
+
+} */

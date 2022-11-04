@@ -1,0 +1,46 @@
+.select1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  height: 23.5vh;
+
+}
+.select2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+
+}
+.type{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+
+}
+.button{
+  display: flex;
+  flex-direction: column;
+  padding:10px;
+  
+}
+.dropdown-container{
+  width: 500px;
+}
+h2{
+  font-family:monospace;
+  color: #000000;
+  font-weight: bolder;
+}
+.time{
+  text-align: center;
+  padding: 20px;
+}
+Table,thead,tbody{
+  width: 50%;
+  text-align: center;
+}

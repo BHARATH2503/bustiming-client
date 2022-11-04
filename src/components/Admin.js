@@ -42,17 +42,17 @@ export default function Admin() {
 
   };
 
-  const show =(res)=>{
-    console.log("show")
-    try{
-      Axios.get("https://bustimings.herokuapp.com/show")
+  // const show =(res)=>{
+  //   console.log("show")
+  //   try{
+  //     Axios.get("https://bustimings.herokuapp.com/show")
       
-    }
-    catch(err){
-      console.log(err);
-      res.send("error");
-    }
-  }
+  //   }
+  //   catch(err){
+  //     console.log(err);
+  //     res.send("error");
+  //   }
+  // }
   const update = () => {
     Axios.put("https://bustimings.herokuapp.com/update",
       {

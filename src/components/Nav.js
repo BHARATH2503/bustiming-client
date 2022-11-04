@@ -20,7 +20,7 @@ export default function Navbar1 ()
               className=" align-center"
               alt="React Bootstrap logo"/></Link>
               <a className='logo' style={{cursor:'default'}}>Find My Bus</a></Navbar.Brand>
-                <Navbar.Toggle style={{color:'red'}} aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle style={{backgroundColor:'#FFFDE3'}} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Link className="link" to="/">Home</Link>

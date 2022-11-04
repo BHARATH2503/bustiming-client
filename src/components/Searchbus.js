@@ -142,10 +142,6 @@ export default function Search() {
                       <Col md={4} className="button"><Button onClick={Search} variant="danger" type="button">
                         SEARCH
                       </Button>
-//                       </Col>
-//                       <Col md={2} className="button"><Button variant="danger" type="submit">
-//                         CLEAR
-//                       </Button>
                       </Col>
                     </Row>
                   </Card.Footer>

@@ -72,7 +72,7 @@ a, ul, li{
       rgb(199, 196, 196),
       rgba(142, 144, 147, 0.7)
     ),  url("https://t3.ftcdn.net/jpg/03/14/47/00/240_F_314470040_TkQqYTlfcvk3I3VGIZSOwzI5B1yIla25.jpg");
-  background-size: cover;
+  background-size: 100%;
   
 }
 

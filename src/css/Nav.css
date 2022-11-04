@@ -21,11 +21,11 @@
 }
 .logo{
     text-decoration: none;
-    color: red;
+    color:white;
     font-weight: bolder;
     margin-left:30px;
     /* padding: 40px; */
 }
 a:hover{
-    color: red;
+    color: white;
 }

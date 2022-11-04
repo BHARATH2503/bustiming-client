@@ -42,17 +42,17 @@ export default function Admin() {
 
   };
 
-  // const show =(res)=>{
-  //   console.log("show")
-  //   try{
-  //     Axios.get("https://bustimings.herokuapp.com/show")
+  const show =(res)=>{
+    console.log("show")
+    try{
+      Axios.get("https://bustimings.herokuapp.com/show")
       
-  //   }
-  //   catch(err){
-  //     console.log(err);
-  //     res.send("error");
-  //   }
-  // }
+    }
+    catch(err){
+      console.log(err);
+      res.send("error");
+    }
+  }
   const update = () => {
     Axios.put("https://bustimings.herokuapp.com/update",
       {
@@ -103,7 +103,7 @@ export default function Admin() {
               <Button className="but1" variant="primary" type="button" onClick={add}>ADD</Button>
               <Button className="but2" variant="info" type="button" onClick={update}>UPDATE</Button>
               <Button className="but3" variant="danger" type="button" onClick={deleted}>DELETE</Button>
-              <Button variant="primary" onClick={handleLogout}>
+              <Button variant="primary"type="button" onClick={handleLogout}>
                 Log out
               </Button>
             </center>

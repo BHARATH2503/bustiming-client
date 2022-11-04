@@ -10,7 +10,7 @@ export default function Navbar1 ()
 {
     return(
         <>
-        <Navbar sticky="top" bg="dark" expand="lg">
+        <Navbar sticky="top" bg="light" expand="lg">
             <Container fluid>
             <Navbar.Brand>
                 <Link to="/Auth"><img style={{cursor:'default'}}

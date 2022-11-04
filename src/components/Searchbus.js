@@ -139,13 +139,13 @@ export default function Search() {
                   </Row>
                   <Card.Footer>
                     <Row className="justify-content-sm-center">
-                      <Col md={2} className="button"><Button onClick={Search} variant="danger" type="button">
+                      <Col md={4} className="button"><Button onClick={Search} variant="danger" type="button">
                         SEARCH
                       </Button>
-                      </Col>
-                      <Col md={2} className="button"><Button variant="danger" type="submit">
-                        CLEAR
-                      </Button>
+//                       </Col>
+//                       <Col md={2} className="button"><Button variant="danger" type="submit">
+//                         CLEAR
+//                       </Button>
                       </Col>
                     </Row>
                   </Card.Footer>

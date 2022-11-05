@@ -27,7 +27,7 @@ const option=[
     { label: 'Thanjavur', value: 'Thanjavur' },
     { label: 'Theni', value: 'Theni' },
     { label: 'Tirupattur', value: 'Tirupattur' },
-    { label: 'Tiruchirappalli', value: 'Tiruchirappalli' },
+    { label: 'Trichy', value: 'Trichy' },
     { label: 'Tirunelveli', value: 'Tirunelveli' },
     { label: 'Tiruppur', value: 'Tiruppur' },
     { label: 'Tiruvallur', value: 'Tiruvallur' },

@@ -27,3 +27,9 @@ body::-webkit-scrollbar{
     opacity: 0.2px;
 
 } */
+
+
+
+tbody{
+    padding:40%;
+}

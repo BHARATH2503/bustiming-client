@@ -3,8 +3,6 @@ import "../css/Searchbus.css";
 import "../index.css";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Select from "react-select";
 import Axios from 'axios';
@@ -77,11 +75,11 @@ export default function Search() {
   const header =
     
       <center>
-      <Table  bordered hover className="w-50" style={{ backgroundColor: '#EAEAEA' }}>
+      <Table bordered hover>
         <thead>
           {head}
         </thead>
-        <tbody >
+        <tbody className="dist">
           {searchdata}
         </tbody>
       </Table>
@@ -90,9 +88,9 @@ export default function Search() {
   return (
     
     <div className="searchBus"><br></br>
-      <div className="row">
-        <div className="col-3"></div>
-        <div className="col-6">
+      
+       
+        <div className="row">
 
           <Card border="dark" style={{ backgroundColor: '#EAEAEA' }}>
             <Card.Header>
@@ -101,7 +99,7 @@ export default function Search() {
             <Card.Body>
               
                 <Form>
-                  <Row className="justify-content-md-center">
+                  
                     <div className="select1">
                       <h2>Choose your Journey Place</h2>
                       <Select
@@ -112,8 +110,8 @@ export default function Search() {
                         isSearchable={true}
                       />
                     </div>
-                  </Row>
-                  <Row className="justify-content-md-center">
+                  
+                  
                     <div className="select2">
                       <h2>Choose your Destination Place</h2>
                       <Select
@@ -123,8 +121,8 @@ export default function Search() {
                         onChange={handleSelect2}
                         isSearchable={true}
                       />
-                    </div></Row>
-                  <Row className="justify-content-md-center">
+                    </div>
+                  
                     <div className="type">
                       <h2>Choose the Type of Bus</h2>
 
@@ -136,27 +134,25 @@ export default function Search() {
                         isSearchable={true}
                       />
                     </div>
-                  </Row>
-                  <Card.Footer>
-                    <Row className="justify-content-sm-center">
-                      <Col md={4} className="button"><Button onClick={Search} variant="danger" type="button">
+                    <div className="row button" style={{textAlign:'center'}}>
+                      
+                        <Button className="btn" onClick={Search} variant="danger" type="button">
                         SEARCH
                       </Button>
-                      </Col>
-                    </Row>
-                  </Card.Footer>
+                     
+                    </div>
+                 
                 </Form>
              
             </Card.Body>
           </Card>
         </div>
-      </div>
-      <div className="col-3"></div>
+      
       <br></br>
-      <div>
+     
       <h1 className="time">Time Details</h1>
         {header}
-        </div>
+       
 
     </div>
   )

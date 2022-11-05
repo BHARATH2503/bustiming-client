@@ -30,7 +30,7 @@ export default function Contact() {
 
                                         <div className="col-lg-12">
                                             <div className="form-group mt-2">
-                                                <textarea className="form-control" rows="3" placeholder="Whether the bus times match with our time or not"></textarea>
+                                                <textarea className="form-control" rows="3" placeholder="Whether the bus times match with our time or not?"></textarea>
                                             </div>
                                         </div>
                                         <div className="col-lg-12">

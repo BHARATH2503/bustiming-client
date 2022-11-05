@@ -75,7 +75,7 @@ export default function Search() {
   const header =
     
       <center>
-      <Table bordered hover>
+      <Table bordered hover className="w-75">
         <thead>
           {head}
         </thead>

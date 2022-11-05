@@ -3,7 +3,9 @@
     background-repeat: no-repeat;
     background-size:cover;
 }
-
+body{
+    margin: 0px;
+}
 body::-webkit-scrollbar{
     margin:0px;
     overflow-x: hidden;
@@ -27,9 +29,3 @@ body::-webkit-scrollbar{
     opacity: 0.2px;
 
 } */
-
-
-
-tbody{
-    padding:40%;
-}

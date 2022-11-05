@@ -117,7 +117,7 @@ a, ul, li{
   margin-bottom: 20px;
  
   border:none;
-  border-radius:0%;
+  border: radius 10%;
  
   padding: 15px 15px 15px 15px;
   
@@ -128,8 +128,8 @@ a, ul, li{
   margin-top: 50px;
   margin-bottom: 20px;
   border: none;
-  border-radius: 0%;
-  padding: 15px 15px 15px 15px;
+  border:radius 10%;
+  /* padding: 15px 15px 15px 15px; */
   
 }
 

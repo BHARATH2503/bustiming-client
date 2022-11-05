@@ -136,7 +136,7 @@ export default function Search() {
                     </div>
                     <div className="row button" style={{textAlign:'center'}}>
                       
-                        <Button className="btn" onClick={Search} variant="danger" type="button">
+                        <Button className="btnn" onClick={Search} variant="danger" type="button">
                         SEARCH
                       </Button>
                      

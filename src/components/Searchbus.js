@@ -75,11 +75,11 @@ export default function Search() {
   const header =
     
       <center>
-      <Table bordered hover className="w-75">
+      <Table bordered hover className="table">
         <thead>
           {head}
         </thead>
-        <tbody className="dist">
+        <tbody>
           {searchdata}
         </tbody>
       </Table>

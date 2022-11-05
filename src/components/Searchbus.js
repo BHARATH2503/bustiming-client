@@ -37,7 +37,6 @@ export default function Search() {
   const [search, setSearch] = useState([]);
 
   const Search = (err) => {
-    console.log(selectedOptions1, selectedOptions2, selectedType);
     Axios.post("https://bustimings.herokuapp.com/search",
       {
         selectedOptions1: selectedOptions1, selectedOptions2: selectedOptions2, selectedType: selectedType,
@@ -48,7 +47,6 @@ export default function Search() {
 
       });
     if (err) {
-      console.log(err);
     }
   }
   const searchdata = search.map((val, key) => {

@@ -22,11 +22,9 @@ export default function Admin() {
       await logOut();
       navigate("/");
     } catch (error) {
-      console.log(error.message);
     }
   }
   const add = (res) => {
-    console.log(id, fromPlace, toPlace, busType, busTime);
     try {
       
       Axios.post("https://bustimings.herokuapp.com/insert",
@@ -36,21 +34,18 @@ export default function Admin() {
     } 
     catch (err) 
     {
-      console.log(err);
-      res.send("error");
+      res.send(err);
     }
 
   };
 
   const show =(res)=>{
-    console.log("show")
     try{
       Axios.get("https://bustimings.herokuapp.com/show")
       
     }
     catch(err){
-      console.log(err);
-      res.send("error");
+      res.send(err);
     }
   }
   const update = () => {

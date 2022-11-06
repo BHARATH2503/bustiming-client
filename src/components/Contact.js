@@ -14,7 +14,7 @@ export default function Contact() {
                         </div>
                         <div className="col-lg-6">
                             <div className="contact-box ml-3">
-                                <h1 className="font-weight-light mt-2">Quick Contact</h1>
+                                <h1 className="font-weight-light mt-2">Feedback</h1>
                                 <form className="mt-4" >
                                     <div className="row">
                                         <div className="col-lg-12">
@@ -27,7 +27,6 @@ export default function Contact() {
                                                 <input className="form-control" type="text" placeholder="City" />
                                             </div>
                                         </div>
-
                                         <div className="col-lg-12">
                                             <div className="form-group mt-2">
                                                 <textarea className="form-control" rows="3" placeholder="Whether the bus times match with our time or not?"></textarea>
@@ -75,7 +74,7 @@ export default function Contact() {
                                             <div className="">
                                                 <h6 className="font-weight-medium">Email</h6>
                                                 <p className="">
-                                                     bustime@gmail.com
+                                                    bustime@gmail.com
                                                 </p>
                                             </div>
                                         </div>

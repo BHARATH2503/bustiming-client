@@ -4,14 +4,12 @@ import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "../css/App.css";
 import { useUserAuth } from "../context/UserAuthContext";
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { logIn } = useUserAuth();
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -22,8 +20,6 @@ const Login = () => {
       setError(err.message);
     }
   };
-
-
   return (
     <>
       <div className="Auth-form-container">
@@ -57,10 +53,7 @@ const Login = () => {
         </Form>
         <hr />
       </div>
-
-
     </>
   );
 };
-
 export default Login;

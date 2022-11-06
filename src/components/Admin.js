@@ -26,40 +26,39 @@ export default function Admin() {
   }
   const add = (res) => {
     try {
-      
+
       Axios.post("https://bustimings.herokuapp.com/insert",
         {
           id: id, fromPlace: fromPlace, toPlace: toPlace, busType: busType, busTime: busTime,
         });
-    } 
-    catch (err) 
-    {
+    }
+    catch (err) {
       res.send(err);
     }
 
   };
 
-  const show =(res)=>{
-    try{
+  const show = (res) => {
+    try {
       Axios.get("https://bustimings.herokuapp.com/show")
-      
+
     }
-    catch(err){
+    catch (err) {
       res.send(err);
     }
   }
   const update = () => {
     Axios.put("https://bustimings.herokuapp.com/update",
       {
-        id:id,
-        busTime:busTime,
+        id: id,
+        busTime: busTime,
       });
   }
 
-  const deleted =() =>{
+  const deleted = () => {
     console.log(id)
-    Axios.post('https://bustimings.herokuapp.com/delete',{id:id});
-    
+    Axios.post('https://bustimings.herokuapp.com/delete', { id: id });
+
   }
   return (
     <>
@@ -98,7 +97,7 @@ export default function Admin() {
               <Button className="but1" variant="primary" type="button" onClick={add}>ADD</Button>
               <Button className="but2" variant="info" type="button" onClick={update}>UPDATE</Button>
               <Button className="but3" variant="danger" type="button" onClick={deleted}>DELETE</Button>
-              <Button variant="primary"type="button" onClick={handleLogout}>
+              <Button variant="primary" type="button" onClick={handleLogout}>
                 Log out
               </Button>
             </center>

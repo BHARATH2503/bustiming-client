@@ -11,7 +11,6 @@ import Admin from './components/Admin';
 import Login from './components/Login';
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext"
-
 function App() {
   return (
     <Router>
@@ -30,5 +29,4 @@ function App() {
 
   );
 }
-
 export default App;

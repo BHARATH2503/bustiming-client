@@ -1,5 +1,4 @@
 const option=[
-
     { label: 'Aranthangi', value: 'Aranthangi' },
     { label: 'Chengalpet', value: 'Chengalpet' },
     { label: 'Chennai', value: 'Chennai' },
@@ -38,86 +37,8 @@ const option=[
     { label: 'Villupuram', value: 'Villupuram' },
     { label: 'Virudhunagar', value: 'Virudhunagar' }
   ];
-
   const type = [
     { label: 'Private ', value: 'Private' },
     { label: 'SETC ', value: 'SETC' }
   ];
-  
 export  {option,type};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-   
-  
-  

@@ -36,7 +36,6 @@ export default function Search() {
         alert("Wait for a second...");
       });
     if (err) {
-      res.send()
     }
   }
   const searchdata = search.map((val, key) => {

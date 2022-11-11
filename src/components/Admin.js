@@ -21,6 +21,7 @@ export default function Admin() {
     try {
       await logOut();
       navigate("/");
+      alert("Logut Succesfully")
     } catch (error) {
     }
   }
@@ -31,6 +32,7 @@ export default function Admin() {
         {
           id: id, fromPlace: fromPlace, toPlace: toPlace, busType: busType, busTime: busTime,
         });
+        alert("Inserted Succesfully");
     }
     catch (err) {
       res.send(err);
@@ -58,7 +60,7 @@ export default function Admin() {
   const deleted = () => {
     console.log(id)
     Axios.post('https://bustimings.herokuapp.com/delete', { id: id });
-
+    alert(id,"Deleted Succesfully");
   }
   return (
     <>

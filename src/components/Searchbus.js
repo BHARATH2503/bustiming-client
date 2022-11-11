@@ -26,6 +26,7 @@ export default function Search() {
   }
   const [search, setSearch] = useState([]);
   const Search = (err) => {
+    alert("Wait for a second...");
     Axios.post("https://bustimings.herokuapp.com/search",
       {
         selectedOptions1: selectedOptions1, selectedOptions2: selectedOptions2, selectedType: selectedType,
@@ -33,7 +34,6 @@ export default function Search() {
       }).then((res) => {
         const data = res.data
         setSearch(data)
-        alert("Wait for a second...");
       });
     if (err) {
     }

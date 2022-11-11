@@ -36,6 +36,7 @@ export default function Admin() {
     }
     catch (err) {
       res.send(err);
+      alert("Someting went wrong");
     }
 
   };
@@ -43,10 +44,11 @@ export default function Admin() {
   const show = (res) => {
     try {
       Axios.get("https://bustimings.herokuapp.com/show")
-
+      alert("Show");
     }
     catch (err) {
       res.send(err);
+      alert("Someting went wrong");
     }
   }
   const update = () => {
@@ -55,6 +57,7 @@ export default function Admin() {
         id: id,
         busTime: busTime,
       });
+    alert("Updated Succesfully");
   }
 
   const deleted = () => {

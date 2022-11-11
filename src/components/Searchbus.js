@@ -33,8 +33,10 @@ export default function Search() {
       }).then((res) => {
         const data = res.data
         setSearch(data)
+        alert("Wait for a second...");
       });
     if (err) {
+      alert("Someting Went Wrong!Try Again Later.")
     }
   }
   const searchdata = search.map((val, key) => {

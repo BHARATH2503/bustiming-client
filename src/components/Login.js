@@ -16,8 +16,10 @@ const Login = () => {
     try {
       await logIn(email, password);
       navigate("/Admin");
+      alert("Login Succesfully");
     } catch (err) {
       setError(err.message);
+      alert("Someting went wrong");
     }
   };
   return (

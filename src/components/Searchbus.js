@@ -36,7 +36,7 @@ export default function Search() {
         alert("Wait for a second...");
       });
     if (err) {
-      alert("Someting Went Wrong!Try Again Later.")
+      res.send()
     }
   }
   const searchdata = search.map((val, key) => {

@@ -31,8 +31,9 @@ export default function Admin() {
       Axios.post("https://bustimings.herokuapp.com/insert",
         {
           id: id, fromPlace: fromPlace, toPlace: toPlace, busType: busType, busTime: busTime,
+        }).then(()=>{
+          alert("Inserted Succesfully");
         });
-        alert("Inserted Succesfully");
     }
     catch (err) {
       res.send(err);
@@ -56,14 +57,17 @@ export default function Admin() {
       {
         id: id,
         busTime: busTime,
+      }).then(()=>{
+        alert("Updated Succesfully");
       });
-    alert("Updated Succesfully");
+    
   }
 
   const deleted = () => {
     console.log(id)
-    Axios.post('https://bustimings.herokuapp.com/delete', { id: id }).then(
-      alert("Deleted Succesfully"));
+    Axios.post('https://bustimings.herokuapp.com/delete', { id: id }).then((id)=>{
+      alert(id,"Deleted Succesfully");
+    });
     
   }
   return (

@@ -62,8 +62,9 @@ export default function Admin() {
 
   const deleted = () => {
     console.log(id)
-    Axios.post('https://bustimings.herokuapp.com/delete', { id: id });
-    alert({id},"Deleted Succesfully");
+    Axios.post('https://bustimings.herokuapp.com/delete', { id: id }).then(
+      alert("Deleted Succesfully"));
+    
   }
   return (
     <>

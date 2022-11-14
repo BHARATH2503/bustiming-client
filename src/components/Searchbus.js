@@ -8,6 +8,8 @@ import Select from "react-select";
 import Axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import { option, type } from "./data";
+import swal from 'sweetalert';
+
 export default function Search() {
   //SELECT1:
   const [selectedOptions1, setSelectedOptions1] = useState();
@@ -26,7 +28,8 @@ export default function Search() {
   }
   const [search, setSearch] = useState([]);
   const Search = (err) => {
-    alert("Wait for a second...");
+    alert("");
+    swal("Wait for a second...","", "warning");
     Axios.post("https://bustimings.herokuapp.com/search",
       {
         selectedOptions1: selectedOptions1, selectedOptions2: selectedOptions2, selectedType: selectedType,

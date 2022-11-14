@@ -5,6 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 import Axios from 'axios';
+import swal from 'sweetalert';
+
 
 
 
@@ -21,8 +23,9 @@ export default function Admin() {
     try {
       await logOut();
       navigate("/");
-      alert("Logut Succesfully")
+      swal("Logut Succesfully", "", "success");
     } catch (error) {
+      swal("Someting went wrong", "", "error");
     }
   }
   const add = (res) => {
@@ -32,12 +35,13 @@ export default function Admin() {
         {
           id: id, fromPlace: fromPlace, toPlace: toPlace, busType: busType, busTime: busTime,
         }).then(()=>{
-          alert("Inserted Succesfully");
+       swal("Inserted Succesfully", "", "success");
+
         });
     }
     catch (err) {
       res.send(err);
-      alert("Someting went wrong");
+      swal("Someting went wrong", "", "error");
     }
 
   };
@@ -49,7 +53,7 @@ export default function Admin() {
     }
     catch (err) {
       res.send(err);
-      alert("Someting went wrong");
+      swal("Someting went wrong", "", "error");
     }
   }
   const update = () => {
@@ -58,7 +62,7 @@ export default function Admin() {
         id: id,
         busTime: busTime,
       }).then(()=>{
-        alert("Updated Succesfully");
+        swal("Updated Succesfully", "", "success");
       });
     
   }
@@ -66,7 +70,7 @@ export default function Admin() {
   const deleted = () => {
     console.log(id)
     Axios.post('https://bustimings.herokuapp.com/delete', { id: id }).then(()=>{
-      alert("Deleted Succesfully");
+      swal("Deleted Succesfully", id , "success");
     });
     
   }

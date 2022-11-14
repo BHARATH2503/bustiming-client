@@ -4,6 +4,9 @@ import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "../css/App.css";
 import { useUserAuth } from "../context/UserAuthContext";
+import swal from 'sweetalert';
+
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,10 +19,10 @@ const Login = () => {
     try {
       await logIn(email, password);
       navigate("/Admin");
-      alert("Login Succesfully");
+      swal("Login Successfullt","", "success");
     } catch (err) {
       setError(err.message);
-      alert("Someting went wrong");
+      swal("Someting went wrong","", "error");
     }
   };
   return (

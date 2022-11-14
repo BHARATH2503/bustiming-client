@@ -28,7 +28,6 @@ export default function Search() {
   }
   const [search, setSearch] = useState([]);
   const Search = (err) => {
-    alert("");
     swal("Wait for a second...","", "warning");
     Axios.post("https://bustimings.herokuapp.com/search",
       {
@@ -37,6 +36,7 @@ export default function Search() {
       }).then((res) => {
         const data = res.data
         setSearch(data)
+        
       });
     if (err) {
     }

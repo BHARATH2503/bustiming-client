@@ -19,7 +19,7 @@ const Login = () => {
     try {
       await logIn(email, password);
       navigate("/Admin");
-      swal("Login Successfullt","", "success");
+      swal("Login Successfully","", "success");
     } catch (err) {
       setError(err.message);
       swal("Someting went wrong","", "error");

@@ -12,7 +12,7 @@ body::-webkit-scrollbar{
 }
 .Bus{
     background-image: url("https://img.freepik.com/premium-vector/bus-stop-waiting-people-passenger-vector-illustration-city-transportation-public-transport-standing_109722-3896.jpg?w=996");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size:cover;
     height: 100%;
     padding-bottom: 50px;   

@@ -4,7 +4,6 @@ import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "../css/App.css";
 import { useUserAuth } from "../context/UserAuthContext";
-import swal from 'sweetalert';
 
 
 const Login = () => {
@@ -19,10 +18,10 @@ const Login = () => {
     try {
       await logIn(email, password);
       navigate("/Admin");
-      swal("Login Successfully","", "success");
+      alert("Login Successfully","", "success");
     } catch (err) {
       setError(err.message);
-      swal("Someting went wrong","", "error");
+      alert("Someting went wrong","", "error");
     }
   };
   return (

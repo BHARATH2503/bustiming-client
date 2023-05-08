@@ -28,10 +28,19 @@ export default function Search() {
     setSelectedType(data);
   }
   const [search, setSearch] = useState([]);
-  if (selectedOptions1 === 0 || selectedOptions2 === 0 || selectedType === 0) {
-    header = <center> <img className="time" src="https://bussewa.com/customer/resources/images/animated-bus.gif" width='30%' align='center' alt="Typing SVG" /></center>
+  if (selectedOptions1 === 0 && selectedOptions2 === 0 && selectedType === 0)
+  {
+    header = <div style={{display:'none'}}></div>
   }
-  else if (search.length === 0) {
+  else if (selectedOptions1 !== 0 || selectedOptions2 !== 0 || selectedType!== 0) {
+    header =<>
+    <center>
+      <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&duration=1500&center=true&vCenter=true&width=535&lines=Loading+.+.+." alt='loading'/>
+      {/* <img className="time" src="https://usagif.com/wp-content/uploads/loading-87.gif" width='25%' align='center' alt="Typing SVG" /> */}
+      </center>
+    </>
+  }
+  else if (search.length < 0 || setSearch.length < 0) {
     header = <h1 className="time">No Data Found</h1>
   }
   else {
@@ -83,7 +92,7 @@ export default function Search() {
       </div>
   }
   return (
-    <div className="searchBus"><br></br>
+    <div className="mt-2  searchBus">
       <div className="row">
         <Card border="dark" style={{ backgroundColor: '#EAEAEA' }}>
           <Card.Header>

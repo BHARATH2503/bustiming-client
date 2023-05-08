@@ -44,16 +44,16 @@ export default function Admin() {
 
   };
 
-  const show = (res) => {
-    try {
-      Axios.get("https://find-my-bus.onrender.com/show" || "http://localhost:3000/show")
-      swal("Show");
-    }
-    catch (err) {
-      res.send(err);
-      swal("Someting went wrong", "", "error");
-    }
-  }
+  // const show = (res) => {
+  //   try {
+  //     Axios.get("https://find-my-bus.onrender.com/show" || "http://localhost:3000/show")
+  //     swal("Show");
+  //   }
+  //   catch (err) {
+  //     res.send(err);
+  //     swal("Someting went wrong", "", "error");
+  //   }
+  // }
   const update = () => {
     Axios.put("https://find-my-bus.onrender.com/update" || "http://localhost:3000/update",
       {

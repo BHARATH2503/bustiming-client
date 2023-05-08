@@ -11,35 +11,43 @@ import swal from 'sweetalert';
 import { option, type } from "./data";
 
 export default function Search() {
+  var head, header;
   //SELECT1:
-  const [selectedOptions1, setSelectedOptions1] = useState();
+  const [selectedOptions1, setSelectedOptions1] = useState(0);
   function handleSelect1(data) {
     setSelectedOptions1(data);
   }
   //SELECT2:
-  const [selectedOptions2, setSelectedOptions2] = useState();
+  const [selectedOptions2, setSelectedOptions2] = useState(0);
   function handleSelect2(data) {
     setSelectedOptions2(data);
   }
   //TYPE
-  const [selectedType, setSelectedType] = useState();
+  const [selectedType, setSelectedType] = useState(0);
   function handleType(data) {
     setSelectedType(data);
   }
   const [search, setSearch] = useState([]);
-  const Search = (err) => {
-    swal("Wait for a second...","", "warning");
+  if (selectedOptions1 === 0 || selectedOptions2 === 0 || selectedType === 0) {
+    header = <center> <img className="time" src="https://bussewa.com/customer/resources/images/animated-bus.gif" width='30%' align='center' alt="Typing SVG" /></center>
+  }
+  else if (search.length === 0) {
+    header = <h1 className="time">No Data Found</h1>
+  }
+  else {
+
+  }
+  const Search = () => {
+    swal("Wait for a second...", "", "warning");
     Axios.post("https://find-my-bus.onrender.com/search" || "http://localhost:3000/searchbus",
       {
         selectedOptions1: selectedOptions1, selectedOptions2: selectedOptions2, selectedType: selectedType,
 
+
       }).then((res) => {
         const data = res.data
         setSearch(data)
-        
       });
-    if (err) {
-    }
   }
   const searchdata = search.map((val, key) => {
     return (
@@ -51,25 +59,29 @@ export default function Search() {
       </tr>
     )
   });
-  const head =
-    <>
-      <tr>
-        <th>From Place</th>
-        <th>To Place</th>
-        <th>Bus Type</th>
-        <th>Bus Time</th>
-      </tr></>
-  const header =
-    <center>
-      <Table bordered hover className="table">
-        <thead>
-          {head}
-        </thead>
-        <tbody>
-          {searchdata}
-        </tbody>
-      </Table>
-    </center>
+  if (search.length >= 1) {
+    head =
+      <>
+        <tr>
+          <th>From Place</th>
+          <th>To Place</th>
+          <th>Bus Type</th>
+          <th>Bus Time</th>
+        </tr></>
+    header =
+      <div>
+        <h1 className="mb-1 time_heading">Time Details</h1><center>
+          <Table bordered hover className="table">
+            <thead>
+              {head}
+            </thead>
+            <tbody>
+              {searchdata}
+            </tbody>
+          </Table>
+        </center>
+      </div>
+  }
   return (
     <div className="searchBus"><br></br>
       <div className="row">
@@ -118,8 +130,10 @@ export default function Search() {
           </Card.Body>
         </Card>
       </div>
-      <br></br>
-      <h1 className="time">Time Details</h1>
-      {header}
-    </div>)
+<div className="time_details">{header}</div>
+      
+
+
+    </div>
+    )
 }

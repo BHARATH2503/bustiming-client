@@ -43,8 +43,23 @@ h2{
   width: 32%;
   margin-left: 32%;
 }
+.time_heading{
+  text-align: center;
+  position: sticky;
+  top: 0px;
+  background-color: whitesmoke;
+}
+.time_details::-webkit-scrollbar {
+  display: none;
+}
+.time_details{
+  width: 40%;
+  min-height: 200px;
+  max-height: 300px;
+  height: fit-content;
+  overflow-y: scroll;
+}
+
 .table{
-  width: 350px;
-  height: auto;
   text-align: center;
 }

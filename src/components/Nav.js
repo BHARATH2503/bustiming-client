@@ -18,7 +18,7 @@ export default function Navbar1 ()
               height="50"
               className=" align-center"
               alt="React Bootstrap logo"/></Link>
-              <a className='logo' style={{cursor:'default'}}>Find My Bus</a></Navbar.Brand>
+              <a className='logo' href="/" style={{cursor:'default'}}>Find My Bus</a></Navbar.Brand>
                 <Navbar.Toggle style={{backgroundColor:'white'}} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

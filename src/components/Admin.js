@@ -8,9 +8,6 @@ import Axios from 'axios';
 import swal from 'sweetalert';
 
 
-
-
-
 export default function Admin() {
   const [id, setId] = useState("");
   const [fromPlace, setFromPlace] = useState("");
@@ -24,53 +21,53 @@ export default function Admin() {
     try {
       await logOut();
       navigate("/");
-      alert("Logut Succesfully", "", "success");
+      swal("Logut Succesfully", "", "success");
     } catch (error) {
-      alert("Someting went wrong", "", "error");
+      swal("Someting went wrong", "", "error");
     }
   }
   const add = (res) => {
     try {
 
-      Axios.post("https://find-my-bus.onrender.com/insert",
+      Axios.post("https://find-my-bus.onrender.com/insert" || "http://localhost:3000/insert",
         {
           id: id, fromPlace: fromPlace, toPlace: toPlace, busType: busType, busTime: busTime,
         }).then(()=>{
-       alert("Inserted Succesfully", "", "success");
+       swal("Inserted Succesfully", "", "success");
 
         });
     }
     catch (err) {
       res.send(err);
-      alert("Someting went wrong", "", "error");
+      swal("Someting went wrong", "", "error");
     }
 
   };
 
   const show = (res) => {
     try {
-      Axios.get("https://find-my-bus.onrender.com/show")
-      alert("Show");
+      Axios.get("https://find-my-bus.onrender.com/show" || "http://localhost:3000/show")
+      swal("Show");
     }
     catch (err) {
       res.send(err);
-      alert("Someting went wrong", "", "error");
+      swal("Someting went wrong", "", "error");
     }
   }
   const update = () => {
-    Axios.put("https://find-my-bus.onrender.com/update",
+    Axios.put("https://find-my-bus.onrender.com/update" || "http://localhost:3000/update",
       {
         id: id,
         busTime: busTime,
       }).then(()=>{
-        alert("Updated Succesfully", "", "success");
+        swal("Updated Succesfully", "", "success");
       });
     
   }
 
   const deleted = () => {
     console.log(id)
-    Axios.post('https://find-my-bus.onrender.com/delete', { id: id }).then(()=>{
+    Axios.post('https://find-my-bus.onrender.com/delete' || 'http://localhost:3000/delete', { id: id }).then(()=>{
       swal("Deleted Succesfully", id , "success");
     });
     

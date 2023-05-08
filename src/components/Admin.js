@@ -31,7 +31,7 @@ export default function Admin() {
   const add = (res) => {
     try {
 
-      Axios.post("https://bustimings.herokuapp.com/insert",
+      Axios.post("https://find-my-bus.onrender.com/insert",
         {
           id: id, fromPlace: fromPlace, toPlace: toPlace, busType: busType, busTime: busTime,
         }).then(()=>{
@@ -48,7 +48,7 @@ export default function Admin() {
 
   const show = (res) => {
     try {
-      Axios.get("https://bustimings.herokuapp.com/show")
+      Axios.get("https://find-my-bus.onrender.com/show")
       alert("Show");
     }
     catch (err) {
@@ -57,7 +57,7 @@ export default function Admin() {
     }
   }
   const update = () => {
-    Axios.put("https://bustimings.herokuapp.com/update",
+    Axios.put("https://find-my-bus.onrender.com/update",
       {
         id: id,
         busTime: busTime,
@@ -69,7 +69,7 @@ export default function Admin() {
 
   const deleted = () => {
     console.log(id)
-    Axios.post('https://bustimings.herokuapp.com/delete', { id: id }).then(()=>{
+    Axios.post('https://find-my-bus.onrender.com/delete', { id: id }).then(()=>{
       swal("Deleted Succesfully", id , "success");
     });
     

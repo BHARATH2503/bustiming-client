@@ -29,7 +29,7 @@ export default function Search() {
   const [search, setSearch] = useState([]);
   const Search = (err) => {
     swal("Wait for a second...","", "warning");
-    Axios.post("https://bustimings.herokuapp.com/search",
+    Axios.post("https://find-my-bus.onrender.com/search",
       {
         selectedOptions1: selectedOptions1, selectedOptions2: selectedOptions2, selectedType: selectedType,
 

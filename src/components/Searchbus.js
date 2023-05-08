@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Select from "react-select";
 import Axios from 'axios';
 import Table from 'react-bootstrap/Table';
+import swal from 'sweetalert';
 import { option, type } from "./data";
 
 export default function Search() {

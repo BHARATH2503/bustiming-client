@@ -3,7 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px;  
+  padding: 15px; 
+  background: transparent;
+}
+  .searchBus{ 
+  background-image: url("https://t3.ftcdn.net/jpg/03/14/47/00/240_F_314470040_TkQqYTlfcvk3I3VGIZSOwzI5B1yIla25.jpg");
+  background-size: 100%;
   
 
 }
@@ -55,11 +60,24 @@ h2{
 .time_details{
   width: 40%;
   min-height: 200px;
-  max-height: 300px;
+  max-height:50vh;
   height: fit-content;
   overflow-y: scroll;
 }
 
 .table{
   text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .loding{
+    text-align: center;
+  }
+  .time_details{
+    width: 100%;
+    min-height: 200px;
+    max-height:50vh;
+    height: fit-content;
+    overflow-y: scroll;
+  }
 }

@@ -19,6 +19,7 @@ export default function Search() {
   }
   //SELECT2:
   const [selectedOptions2, setSelectedOptions2] = useState(0);
+
   function handleSelect2(data) {
     setSelectedOptions2(data);
   }
@@ -28,25 +29,22 @@ export default function Search() {
     setSelectedType(data);
   }
   const [search, setSearch] = useState([]);
-  if (selectedOptions1 === 0 && selectedOptions2 === 0 && selectedType === 0)
-  {
-    header = <div style={{display:'none'}}></div>
+  if (selectedOptions1 === 0 && selectedOptions2 === 0 && selectedType === 0) {
+ header = <div style={{ display: 'none' }}></div>
   }
-  else if (selectedOptions1 !== 0 || selectedOptions2 !== 0 || selectedType!== 0) {
-    header =<>
-    <center>
-      <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&duration=1500&center=true&vCenter=true&width=535&lines=Loading+.+.+." alt='loading'/>
-      {/* <img className="time" src="https://usagif.com/wp-content/uploads/loading-87.gif" width='25%' align='center' alt="Typing SVG" /> */}
-      </center>
+  
+  if (selectedOptions1 !== 0 || selectedOptions2 !== 0 || selectedType !== 0 ) {
+    header = <>
+      <img className="loding" src="https://readme-typing-svg.herokuapp.com?font=Sigmar+Code&weight=700&size=30&duration=1700&color=000&center=true&vCenter=true&lines=Loading+.+.+." alt='loading' />
     </>
   }
-  else if (search.length < 0 || setSearch.length < 0) {
-    header = <h1 className="time">No Data Found</h1>
-  }
-  else {
-
-  }
+  
+//   if (search.length === 0) {
+//     header = <h1 className="time">No Data Found</h1>
+// }
+  
   const Search = () => {
+
     swal("Wait for a second...", "", "warning");
     Axios.post("https://find-my-bus.onrender.com/search" || "http://localhost:3000/searchbus",
       {
@@ -55,6 +53,8 @@ export default function Search() {
 
       }).then((res) => {
         const data = res.data
+        console.log(data);
+
         setSearch(data)
       });
   }
@@ -69,6 +69,7 @@ export default function Search() {
     )
   });
   if (search.length >= 1) {
+  
     head =
       <>
         <tr>
@@ -78,7 +79,7 @@ export default function Search() {
           <th>Bus Time</th>
         </tr></>
     header =
-      <div>
+      <div style={{ backgroundColor: 'whitesmoke' }}>
         <h1 className="mb-1 time_heading">Time Details</h1><center>
           <Table bordered hover className="table">
             <thead>
@@ -91,8 +92,14 @@ export default function Search() {
         </center>
       </div>
   }
+  // else{
+  //   if (search.length === 0) {
+  //     header = <h1 className="time">No Data Found</h1>
+  //   }
+  
+  // }
   return (
-    <div className="mt-2  searchBus">
+    <div className="mt-0 searchBus">
       <div className="row">
         <Card border="dark" style={{ backgroundColor: '#EAEAEA' }}>
           <Card.Header>
@@ -139,10 +146,10 @@ export default function Search() {
           </Card.Body>
         </Card>
       </div>
-<div className="time_details">{header}</div>
-      
+      <div className="time_details">{header}</div>
+
 
 
     </div>
-    )
+  )
 }

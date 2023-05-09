@@ -100,3 +100,9 @@ margin:5px;
 {
   margin-top: 20px;
 } 
+@media only screen and (max-width: 600px) {
+  .Bus1{
+    width: 100%;
+    margin-left: 0%;
+  }
+}

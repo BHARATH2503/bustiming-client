@@ -40,38 +40,26 @@ export default function Contact() {
                             </div>
                         </div>
                         <div className="col-lg-12">
-                            <div className="card mt-4 border-0 mb-4">
+                            <div className="card mt-4 border-0 mb-4" style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                                 <div className="row">
-                                    <div className="col-lg-4 col-md-4">
-                                        <div className="card-body d-flex align-items-center c-detail pl-0">
-                                            <div className="mr-3 align-self-center">
-                                                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png" alt="h" />
-                                            </div>
-                                            <div className="">
-                                                <h6 className="font-weight-medium">Address</h6>
-                                                <p className="">Kongu Engineering College,
-                                                    <br /> Perundurai,Erode.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4 col-md-4">
+                                    <div className="col-lg-6 col-md-6">
                                         <div className="card-body d-flex align-items-center c-detail">
                                             <div className="mr-3 align-self-center">
                                                 <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png" alt="h" />
                                             </div>
-                                            <div className="">
+                                            <div className="" style={{marginLeft:'20px'}}>
                                                 <h6 className="font-weight-medium">Phone</h6>
-                                                <p className="">251 546 9442
+                                                <p className="" >251 546 9442
                                                     <br /> 630 446 8851</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-lg-4 col-md-4">
+                                    <div className="col-lg-6 col-md-6">
                                         <div className="card-body d-flex align-items-center c-detail">
                                             <div className="mr-3 align-self-center">
                                                 <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png" alt="h" />
                                             </div>
-                                            <div className="">
+                                            <div className="" style={{marginLeft:'20px'}} >
                                                 <h6 className="font-weight-medium">Email</h6>
                                                 <p className="">
                                                     bustime@gmail.com

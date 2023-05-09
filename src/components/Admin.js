@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import "../index.css";
 import { useUserAuth } from "../context/UserAuthContext";
 import React, { useState } from "react";
 import Form from 'react-bootstrap/Form';
@@ -6,14 +7,27 @@ import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 import Axios from 'axios';
 import swal from 'sweetalert';
+import Select from "react-select";
+import { option, type } from "./data";
+
 
 
 export default function Admin() {
-  const [id, setId] = useState("");
-  const [fromPlace, setFromPlace] = useState("");
-  const [toPlace, setToPlace] = useState("");
-  const [busType, setBusType] = useState("");
-  const [busTime, setBusTime] = useState("");
+  const [id, setId] = useState('');
+  const [fromPlace, setFromPlace] = useState('');
+  function handleSelect1(data) {
+    setFromPlace(data);
+  }
+  const [toPlace, setToPlace] = useState('');
+  function handleSelect2(data) {
+    setToPlace(data);
+    
+  }
+  const [busType, setBusType] = useState('');
+  function handleType(data) {
+    setBusType(data);
+  }
+  const [busTime, setBusTime] = useState();
 
   const { logOut, user } = useUserAuth();
   const navigate = useNavigate();
@@ -31,10 +45,9 @@ export default function Admin() {
 
       Axios.post("https://find-my-bus.onrender.com/insert" || "http://localhost:3000/insert",
         {
-          id: id, fromPlace: fromPlace, toPlace: toPlace, busType: busType, busTime: busTime,
+          id: id.value, fromPlace: fromPlace.value, toPlace: toPlace.value, busType: busType.value, busTime: busTime.value,
         }).then(()=>{
-       swal("Inserted Succesfully", "", "success");
-
+           swal("Inserted Succesfully", "", "success");
         });
     }
     catch (err) {
@@ -57,8 +70,8 @@ export default function Admin() {
   const update = () => {
     Axios.put("https://find-my-bus.onrender.com/update" || "http://localhost:3000/update",
       {
-        id: id,
-        busTime: busTime,
+        id: id.value,
+        busTime: busTime.value,
       }).then(()=>{
         swal("Updated Succesfully", "", "success");
       });
@@ -67,7 +80,7 @@ export default function Admin() {
 
   const deleted = () => {
     console.log(id)
-    Axios.post('https://find-my-bus.onrender.com/delete' || 'http://localhost:3000/delete', { id: id }).then(()=>{
+    Axios.post('https://find-my-bus.onrender.com/delete' || 'http://localhost:3000/delete', { id: id.value }).then(()=>{
       swal("Deleted Succesfully", id , "success");
     });
     
@@ -88,17 +101,39 @@ export default function Admin() {
             </Form.Group>
             <Form.Group className="m-3" controlId="formBasicText">
               <Form.Label>From Place</Form.Label>
-              <Form.Control type="text" required={true} placeholder="Enter place" onChange={(event) => { setFromPlace(event.target.value); }} />
+                <Select
+                  options={option}
+                  placeholder="Select journey place"
+                  value={fromPlace}
+                  onChange={handleSelect1}
+                  isSearchable={true}
+                />               
+                
+              {/* <Form.Control type="text" required={true}   onChange={(event) => { setFromPlace(event.target.value); }} placeholder="Enter place"  /> */}
             </Form.Group>
 
             <Form.Group className="m-3" controlId="formBasicText">
               <Form.Label>To Place</Form.Label>
-              <Form.Control type="text" required={true} placeholder="Enter place" onChange={(event) => { setToPlace(event.target.value); }} />
+              <Select
+                  options={option}
+                  placeholder="Select destination place"
+                  value={toPlace}
+                  onChange={handleSelect2}
+                  isSearchable={true}
+                />
+              {/* <Form.Control type="text" required={true} placeholder="Enter place" onChange={(event) => { setToPlace(event.target.value); }} /> */}
             </Form.Group>
 
             <Form.Group className="m-3" controlId="formBasicText">
               <Form.Label>Bus Type</Form.Label>
-              <Form.Control type="text" required={true} placeholder="Enter type" onChange={(event) => { setBusType(event.target.value); }} />
+              <Select
+                  options={type}
+                  placeholder="Select type of bus"
+                  value={busType}
+                  onChange={handleType}
+                  isSearchable={true}
+                />
+              {/* <Form.Control type="text" required={true} placeholder="Enter type" onChange={(event) => { setBusType(event.target.value); }} /> */}
             </Form.Group>
 
             <Form.Group className="m-3" controlId="formBasicText">
@@ -106,9 +141,9 @@ export default function Admin() {
               <Form.Control type="text" required={true} placeholder="Enter time" onChange={(event) => { setBusTime(event.target.value); }} />
             </Form.Group>
             <center>
-              <Button className="but1" variant="primary" type="button" onClick={add}>ADD</Button>
-              <Button className="but2" variant="info" type="button" onClick={update}>UPDATE</Button>
-              <Button className="but3" variant="danger" type="button" onClick={deleted}>DELETE</Button>
+              <Button className="but1" variant="primary" type="button"  onClick={add}>ADD</Button>
+              <Button className="but2" variant="info" type="button" title='id,time' onClick={update}>UPDATE</Button>
+              <Button className="but3" variant="danger" type="button" title='id' onClick={deleted}>DELETE</Button>
               <Button variant="primary" type="button" onClick={handleLogout}>
                 Log out
               </Button>

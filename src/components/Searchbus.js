@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Searchbus.css";
 import "../index.css";
 import Button from 'react-bootstrap/Button';
@@ -7,10 +7,11 @@ import Card from 'react-bootstrap/Card';
 import Select from "react-select";
 import Axios from 'axios';
 import Table from 'react-bootstrap/Table';
-import swal from 'sweetalert';
 import { option, type } from "./data";
+// import Preloader from "./Preloader";
 
 export default function Search() {
+  const [data1, setdata1] = useState(false);
   var head, header;
   //SELECT1:
   const [selectedOptions1, setSelectedOptions1] = useState(0);
@@ -29,35 +30,31 @@ export default function Search() {
     setSelectedType(data);
   }
   const [search, setSearch] = useState([]);
-  if (selectedOptions1 === 0 && selectedOptions2 === 0 && selectedType === 0) {
- header = <div style={{ display: 'none' }}></div>
-  }
-  
-  if (selectedOptions1 !== 0 || selectedOptions2 !== 0 || selectedType !== 0 ) {
-    header = <>
-      <img className="loding" src="https://readme-typing-svg.herokuapp.com?font=Sigmar+Code&weight=700&size=30&duration=1700&color=000&center=true&vCenter=true&lines=Loading+.+.+." alt='loading' />
-    </>
-  }
-  
-//   if (search.length === 0) {
-//     header = <h1 className="time">No Data Found</h1>
-// }
-  
+  useEffect(() => {
+    Search()
+  }, [])
+
   const Search = () => {
 
-    swal("Wait for a second...", "", "warning");
-    Axios.post("https://find-my-bus.onrender.com/search" || "http://localhost:3000/searchbus",
+    Axios.post("https://find-my-bus.onrender.com/search",
       {
         selectedOptions1: selectedOptions1, selectedOptions2: selectedOptions2, selectedType: selectedType,
-
-
       }).then((res) => {
         const data = res.data
-        console.log(data);
+        if (data.length == 0) {
+          setdata1(false);
+          setSearch([]);
+        } else {
+          setSearch(data)
+          setdata1(true)
 
-        setSearch(data)
+        }
       });
+
   }
+
+
+
   const searchdata = search.map((val, key) => {
     return (
       <tr key={key}>
@@ -68,48 +65,43 @@ export default function Search() {
       </tr>
     )
   });
-  if (search.length >= 1) {
-  
-    head =
-      <>
-        <tr>
-          <th>From Place</th>
-          <th>To Place</th>
-          <th>Bus Type</th>
-          <th>Bus Time</th>
-        </tr></>
-    header =
-      <div style={{ backgroundColor: 'whitesmoke' }}>
-        <h1 className="mb-1 time_heading">Time Details</h1><center>
-          <Table bordered hover className="table">
-            <thead>
-              {head}
-            </thead>
-            <tbody>
-              {searchdata}
-            </tbody>
-          </Table>
-        </center>
-      </div>
-  }
-  // else{
-  //   if (search.length === 0) {
-  //     header = <h1 className="time">No Data Found</h1>
-  //   }
-  
-  // }
+
+  head =
+    <>
+      <tr>
+        <th>From Place</th>
+        <th>To Place</th>
+        <th>Bus Type</th>
+        <th>Bus Time</th>
+      </tr></>
+  header =
+    <div>
+
+      <h1 className="mb-1 time_heading">From {selectedOptions1.label} to {selectedOptions2.label}
+        <br></br> {search.length}  Buses Available</h1><center>
+        <Table bordered hover className="table">
+          <thead>
+            {head}
+          </thead>
+          <tbody>
+            {searchdata}
+          </tbody>
+        </Table>
+      </center>
+    </div>
+
   return (
     <div className="mt-0 searchBus">
       <div className="row">
-        <Card border="dark" style={{ backgroundColor: '#EAEAEA' }}>
+        <Card className="card" border="dark" style={{ backgroundColor: '#EAEAEA' }}>
           <Card.Header>
-            <h1 style={{ textAlign: 'center' }}>Search You  Timings</h1>
+            <h1 style={{ textAlign: 'center' }}>Find  Your Bus Timings</h1>
           </Card.Header>
           <Card.Body>
             <Form>
               <div className="select1">
                 <h2>Choose your Journey Place</h2>
-                <Select
+                <Select className="option"
                   options={option}
                   placeholder="Select journey place"
                   value={selectedOptions1}
@@ -119,7 +111,7 @@ export default function Search() {
               </div>
               <div className="select2">
                 <h2>Choose your Destination Place</h2>
-                <Select
+                <Select className="option"
                   options={option}
                   placeholder="Select destination place"
                   value={selectedOptions2}
@@ -129,7 +121,7 @@ export default function Search() {
               </div>
               <div className="type">
                 <h2>Choose the Type of Bus</h2>
-                <Select
+                <Select className="option"
                   options={type}
                   placeholder="Select type of bus"
                   value={selectedType}
@@ -138,15 +130,22 @@ export default function Search() {
                 />
               </div>
               <div className="row button" style={{ textAlign: 'center' }}>
-                <Button className="btnn" onClick={Search} variant="danger" type="button">
+                <Button className="btnn" onClick={Search} variant="danger" disabled={!selectedOptions1 || !selectedOptions2 || !selectedType} type="button">
                   SEARCH
                 </Button>
               </div>
             </Form>
           </Card.Body>
         </Card>
+
       </div>
-      <div className="time_details">{header}</div>
+
+      <div className="time_details">
+        {!data1 && selectedType !== 0 && selectedOptions1 !== 0 && selectedOptions2 !== 0 ? <div style={{ textAlign: 'center' }}><h2>No data found</h2></div> : ""}
+        {
+          search.length !== 0 && header
+        }
+      </div>
 
 
 

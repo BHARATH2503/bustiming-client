@@ -24,7 +24,7 @@ export default function Navbar1 ()
                     <Nav className="me-auto">
                         <Link className="link" to="/">Home</Link>
                         <Link className="link" to="/searchbus">Search Bus</Link>
-                        <Link className="link" to="/contact">Contact</Link>
+                        <Link className="link" to="/contact">Feedback</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -32,25 +32,3 @@ export default function Navbar1 ()
         </>
   );
 }
-
-//         <div>
-//             <nav className="nav navbar bg-dark">
-//             <ul className="items">
-//             <li>
-//             <Link className="link" to="/">Home</Link>
-//             </li>
-//             <li>
-//             <Link className="link" to="/searchbus">Search Bus</Link>
-//             </li>
-//             <li>
-//             <Link className="link" to="/contact">Contact</Link>
-//             </li>
-            
-//             <li>
-//             <Link className="link" to="/Auth">Login</Link>
-//             </li>
-//             </ul>
-//             </nav>
-//         </div>
-//     );
-// }

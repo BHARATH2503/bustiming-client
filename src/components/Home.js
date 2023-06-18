@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/Home.css"
+import Preloader from "./Preloader";
+
 export default function Home() {
     return (
         <div className="intro-header">

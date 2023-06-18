@@ -1,82 +1,109 @@
-.select1,.searchBus {
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+.searchBus {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15px; 
+  padding: 15px;
   background: transparent;
 }
-  .searchBus{ 
-  background-image: url("https://t3.ftcdn.net/jpg/03/14/47/00/240_F_314470040_TkQqYTlfcvk3I3VGIZSOwzI5B1yIla25.jpg");
+
+.searchBus {
+  background-color: #C3C1C1;
   background-size: 100%;
-  
+
 
 }
-.select2 {
+
+.option {
+  text-align: center;
+  width: 50%;
+  max-width: 50%;
+  min-width: 50%;
+}
+
+.select2,
+.select1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  }
-.type{
+}
+
+.type {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 15px;
-  }
-.button{
+}
+
+.button {
   text-align: center;
   padding: 30px;
-  
+
 }
-.dropdown-container{
-  width:60%;
+
+.dropdown-container {
+  width: 60%;
 }
-h2{
-  font-family:monospace;
+
+h2 {
+  font-family: 'Playfair Display';
   color: #000000;
   font-weight: bolder;
 }
-.time{
+
+.time {
   text-align: center;
- 
+
 }
 
-.btnn{
+.btnn {
   width: 32%;
   margin-left: 32%;
 }
-.time_heading{
+
+.time_heading {
   text-align: center;
   position: sticky;
   top: 0px;
   background-color: whitesmoke;
 }
+
 .time_details::-webkit-scrollbar {
   display: none;
 }
-.time_details{
+
+.time_details {
   width: 40%;
   min-height: 200px;
-  max-height:50vh;
+  max-height: 50vh;
   height: fit-content;
   overflow-y: scroll;
 }
 
-.table{
+.table,.time_details,.time_heading {
   text-align: center;
+  border: #000000 1px;
+  border-radius: 10px;
+  background-color: #C3C1C1;
+}
+.card{
+  width: 605px;
 }
 
 @media only screen and (max-width: 600px) {
-  .loding{
+  .loding {
     text-align: center;
   }
-  .time_details{
+
+  .time_details {
     width: 100%;
     min-height: 200px;
-    max-height:50vh;
+    max-height: 50vh;
     height: fit-content;
     overflow-y: scroll;
   }

@@ -20,9 +20,8 @@ export default function Home() {
                                     <Link to="/contact"><button className="button2 btn btn-primary btn-lg "> <span className="network-name">Feedback</span></button></Link>
                                 </li>
                             </ul>
-                            <h4 className="learn animated bounceInUp">About Our Website</h4><br />
+                           <h4 className="learn animated bounceInUp"><strong>About Our Website</strong></h4><br />
                             <h4 style={{ fontWeight: 'bolder' }}>With a motive to make travel comfort and convenience this website will be helpful to commute.</h4>
                         </div></div>
-                    <div className="col-lg-4"></div>
                 </div></div></div>
     );}

@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Select from "react-select";
 import Axios from 'axios';
 import Table from 'react-bootstrap/Table';
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import { option, type } from "./data";
 // import Preloader from "./Preloader";
 
@@ -32,7 +33,7 @@ export default function Search() {
   const [search, setSearch] = useState([]);
   useEffect(() => {
     Search()
-  }, [])
+  }, [selectedOptions1,selectedOptions2,selectedType])
 
   const Search = () => {
 
@@ -41,7 +42,7 @@ export default function Search() {
         selectedOptions1: selectedOptions1, selectedOptions2: selectedOptions2, selectedType: selectedType,
       }).then((res) => {
         const data = res.data
-        if (data.length == 0) {
+        if (data.length === 0) {
           setdata1(false);
           setSearch([]);
         } else {
@@ -130,9 +131,11 @@ export default function Search() {
                 />
               </div>
               <div className="row button" style={{ textAlign: 'center' }}>
+              <AnchorLink  href='#timeDetails'>
                 <Button className="btnn" onClick={Search} variant="danger" disabled={!selectedOptions1 || !selectedOptions2 || !selectedType} type="button">
                   SEARCH
                 </Button>
+                </AnchorLink>
               </div>
             </Form>
           </Card.Body>
@@ -140,7 +143,7 @@ export default function Search() {
 
       </div>
 
-      <div className="time_details">
+      <div className="time_details" id='timeDetails'>
         {!data1 && selectedType !== 0 && selectedOptions1 !== 0 && selectedOptions2 !== 0 ? <div style={{ textAlign: 'center' }}><h2>No data found</h2></div> : ""}
         {
           search.length !== 0 && header

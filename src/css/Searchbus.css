@@ -61,9 +61,8 @@ h2 {
 
 }
 
-.btnn {
+.btnn{
   width: 32%;
-  margin-left: 32%;
 }
 
 .time_heading {
@@ -78,9 +77,10 @@ h2 {
 }
 
 .time_details {
+  margin-top: 5%;
   width: 40%;
   min-height: 200px;
-  max-height: 50vh;
+  max-height: 60vh;
   height: fit-content;
   overflow-y: scroll;
 }
@@ -92,6 +92,7 @@ h2 {
   background-color: #C3C1C1;
 }
 .card{
+  margin-top: 5%;
   width: 605px;
 }
 

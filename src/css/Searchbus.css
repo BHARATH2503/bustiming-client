@@ -92,20 +92,43 @@ h2 {
   background-color: #C3C1C1;
 }
 .card{
-  margin-top: 5%;
+  /* margin-top: 5%; */
   width: 605px;
 }
 
 @media only screen and (max-width: 600px) {
+  .searchBus{
+    height: 100vh;
+  }
+  .row{
+    margin-top:-50px ;
+  }
+  h2{
+    font-size: 18px;
+  }
   .loding {
     text-align: center;
   }
-
+  .card{
+    width: fit-content;
+  }
+  .option{
+    text-align: center;
+    width:auto;
+    max-width: 280px;
+    min-width: 200px;
+  }
+  .css-1s2u09g-control{
+    width: 280px !important;
+  }
+  .button{
+    padding: 0;
+  }
   .time_details {
     width: 100%;
-    min-height: 200px;
-    max-height: 50vh;
-    height: fit-content;
+    min-height: 300px;
+    max-height: 100vh;
+    height: max-content;
     overflow-y: scroll;
   }
 }

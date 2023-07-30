@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/Home.css"
-import Preloader from "./Preloader";
 
 export default function Home() {
     return (
@@ -14,13 +13,13 @@ export default function Home() {
                             <h3 className="animated slideInRight">Explore your options.</h3>
                             <ul className="list-inline intro-social-buttons">
                                 <li>
-                                    <Link to="/searchbus"> <button className="button1 btn btn-success btn-lg"> <span className="network-name">Search Your Timings</span></button></Link>
+                                    <Link to="/searchbus"> <button className="button1 btn btn-success btn-sm"> <span className="network-name">Search Your Timings</span></button></Link>
                                 </li>
                                 <li>
-                                    <Link to="/contact"><button className="button2 btn btn-primary btn-lg "> <span className="network-name">Feedback</span></button></Link>
+                                    <Link to="/contact"><button className="button2 btn btn-primary btn-sm "> <span className="network-name">Feedback</span></button></Link>
                                 </li>
                             </ul>
-                           <h4 className="learn animated bounceInUp"><strong>About Our Website</strong></h4><br />
+                           <h3 className="learn animated bounceInUp">About Our Website</h3><br />
                             <h4 style={{ fontWeight: 'bolder' }}>With a motive to make travel comfort and convenience this website will be helpful to commute.</h4>
                         </div></div>
                 </div></div></div>

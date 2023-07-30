@@ -80,13 +80,12 @@ li {
 
 .intro-message {
   position: relative;
-  padding-top: 1%;
-  padding-bottom: 10%;
+  padding-top: 5%;
 }
 
 .intro-message>h1 {
-  font-size: 4em;
-  font-weight: 400;
+  font-size: 2.5em;
+  font-weight: bold;
   text-align: left;
 
 }
@@ -94,7 +93,7 @@ li {
 .intro-message>h3 {
   margin-top: 50;
   font-size: 2.5em;
-  font-weight: 150;
+  font-weight: bold;
   letter-spacing: 4;
   text-align: left;
 
@@ -102,7 +101,7 @@ li {
 
 .intro-message>h4 {
   margin-top: 200;
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-weight: 400;
   letter-spacing: 2;
 
@@ -115,24 +114,16 @@ h4.landImg {
 
 }
 
+.intro-message>ul>li{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 .button1,
 .button2 {
-  margin-top: 50px;
-  margin-bottom: 20px;
-
   border: none;
-  border: radius 10%;
-
+  border-radius:12px;
   padding: 15px 15px 15px 15px;
 
-}
-
-
-.button2 {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  border: none;
-  border: radius 10%;
 }
 
 .highlight {
@@ -143,4 +134,23 @@ h4.landImg {
   font-size: 22px;
   font-weight: 800;
   font-family: 'lato';
+}
+
+.col-lg-8{
+  height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .intro-message{
+    margin-top: 25%;
+  }
+  .intro-message>h1,h3{
+    font-size: 1.5em;
+  }
+  .intro-message>h3{
+    font-size: 1.25em;
+  }
+  .intro-message>h4{
+    font-size: 1em;
+  }
 }

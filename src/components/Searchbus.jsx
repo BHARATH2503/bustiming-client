@@ -33,7 +33,7 @@ export default function Search() {
   const [search, setSearch] = useState([]);
   useEffect(() => {
     Search()
-  }, [selectedOptions1,selectedOptions2,selectedType])
+  }, [selectedOptions1, selectedOptions2, selectedType])
 
   const Search = () => {
 
@@ -107,7 +107,6 @@ export default function Search() {
                   placeholder="Select journey place"
                   value={selectedOptions1}
                   onChange={handleSelect1}
-                  isSearchable={true}
                 />
               </div>
               <div className="select2">
@@ -117,7 +116,6 @@ export default function Search() {
                   placeholder="Select destination place"
                   value={selectedOptions2}
                   onChange={handleSelect2}
-                  isSearchable={true}
                 />
               </div>
               <div className="type">
@@ -127,14 +125,13 @@ export default function Search() {
                   placeholder="Select type of bus"
                   value={selectedType}
                   onChange={handleType}
-                  isSearchable={true}
                 />
               </div>
-              <div className="row button" style={{ textAlign: 'center' }}>
-              <AnchorLink  href='#timeDetails'>
-                <Button className="btnn" onClick={Search} variant="danger" disabled={!selectedOptions1 || !selectedOptions2 || !selectedType} type="button">
-                  SEARCH
-                </Button>
+              <div className="button" style={{ textAlign: 'center' }}>
+                <AnchorLink href='#timeDetails'>
+                  <Button className="btnn" onClick={Search} variant="danger" disabled={!selectedOptions1 || !selectedOptions2 || !selectedType} type="button">
+                    SEARCH
+                  </Button>
                 </AnchorLink>
               </div>
             </Form>

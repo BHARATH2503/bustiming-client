@@ -107,6 +107,7 @@ export default function Search() {
                   placeholder="Select journey place"
                   value={selectedOptions1}
                   onChange={handleSelect1}
+                  isSearchable={false}
                 />
               </div>
               <div className="select2">
@@ -116,6 +117,7 @@ export default function Search() {
                   placeholder="Select destination place"
                   value={selectedOptions2}
                   onChange={handleSelect2}
+                  isSearchable={false}
                 />
               </div>
               <div className="type">
@@ -125,6 +127,7 @@ export default function Search() {
                   placeholder="Select type of bus"
                   value={selectedType}
                   onChange={handleType}
+                  isSearchable={false}
                 />
               </div>
               <div className="button" style={{ textAlign: 'center' }}>

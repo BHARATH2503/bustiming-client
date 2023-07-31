@@ -38,7 +38,8 @@ const option=[
     { label: 'Virudhunagar', value: 'Virudhunagar' }
   ];
   const type = [
-    { label: 'Private ', value: 'Private' },
-    { label: 'SETC ', value: 'SETC' }
+  { value: "ANY BUS", label: "ANY BUS" },
+  { value: "Private", label: "PRIVATE" },
+  { value: "SETC", label: "SETC" },
   ];
 export  {option,type};

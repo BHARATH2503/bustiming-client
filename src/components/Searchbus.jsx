@@ -15,7 +15,7 @@ export default function Search() {
   const [data1, setdata1] = useState(false);
 
   // api
-  const apiKey = process.env.REACT_APP_API_KEY;
+  // const apiKey = process.env.REACT_APP_API_KEY;
 
   var head, header;
   //SELECT1:
@@ -40,7 +40,7 @@ export default function Search() {
   })
 
   const Search = () => {
-    Axios.post(apiKey + "/search",
+    Axios.post("https://find-my-bus.onrender.com/search",
       {
         selectedOptions1: selectedOptions1, selectedOptions2: selectedOptions2, selectedType: selectedType,
       }).then((res) => {
@@ -56,21 +56,6 @@ export default function Search() {
       });
 
   }
-
-  fetch(apiKey + "/show", (res) => {
-    const data = res.data
-    if (data.length === 0) {
-      setdata1(false);
-      setSearch([]);
-    } else {
-      setSearch(data)
-      setdata1(true)
-
-    }
-  }
-
-  )
-
   const searchdata = search.map((val, key) => {
     return (
       <tr key={key}>

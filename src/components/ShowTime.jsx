@@ -22,11 +22,11 @@ export default function ShowTime() {
     }
 
     const [data, setData] = useState([])
-    const apiKey = process.env.REACT_APP_API_KEY;
+    // const apiKey = process.env.REACT_APP_API_KEY;
     var head, header;
 
     const fetchData = async () => {
-        const res = await Axios.get(apiKey + "/show")
+        const res = await Axios.get("https://find-my-bus.onrender.com/show")
         // console.log(res)
         setData(res.data)
 

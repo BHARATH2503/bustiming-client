@@ -1,19 +1,39 @@
-.Auth-form-container{
+.Auth-form-container {
     background-image: url("https://img.freepik.com/premium-vector/bus-stop-waiting-people-passenger-vector-illustration-city-transportation-public-transport-standing_109722-3896.jpg?w=996");
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
 }
 
-body::-webkit-scrollbar{
-    
+body::-webkit-scrollbar {
     overflow-x: hidden;
     overflow-y: scroll;
     display: none;
 }
-.Bus{
+
+.Bus {
     background-image: url("https://img.freepik.com/premium-vector/bus-stop-waiting-people-passenger-vector-illustration-city-transportation-public-transport-standing_109722-3896.jpg?w=996");
     background-repeat: repeat;
-    background-size:cover;
+    background-size: cover;
     height: 100%;
-    padding-bottom: 50px;   
+    padding-bottom: 50px;
+}
+
+.showdata {
+    background: #67B26F;
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+    background: linear-gradient(to right, #4ca2cd, #67B26F);
+
+}
+
+.showdata>div {
+    background: #67B26F;
+    background: -webkit-linear-gradient(to right, #4ca2cd, #67B26F);
+    background: linear-gradient(to right, #4ca2cd, #67B26F);
+
+}
+
+.data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

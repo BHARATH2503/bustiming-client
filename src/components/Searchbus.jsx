@@ -13,6 +13,10 @@ import { option, type } from "./data";
 
 export default function Search() {
   const [data1, setdata1] = useState(false);
+
+  // api
+  const apiKey = process.env.REACT_APP_API_KEY;
+
   var head, header;
   //SELECT1:
   const [selectedOptions1, setSelectedOptions1] = useState(0);
@@ -33,11 +37,10 @@ export default function Search() {
   const [search, setSearch] = useState([]);
   useEffect(() => {
     Search()
-  }, [selectedOptions1, selectedOptions2, selectedType])
+  })
 
   const Search = () => {
-
-    Axios.post("https://find-my-bus.onrender.com/search",
+    Axios.post(apiKey + "/search",
       {
         selectedOptions1: selectedOptions1, selectedOptions2: selectedOptions2, selectedType: selectedType,
       }).then((res) => {
@@ -54,7 +57,19 @@ export default function Search() {
 
   }
 
+  fetch(apiKey + "/show", (res) => {
+    const data = res.data
+    if (data.length === 0) {
+      setdata1(false);
+      setSearch([]);
+    } else {
+      setSearch(data)
+      setdata1(true)
 
+    }
+  }
+
+  )
 
   const searchdata = search.map((val, key) => {
     return (
@@ -92,6 +107,7 @@ export default function Search() {
     </div>
 
   return (
+
     <div className="mt-0 searchBus">
       <div className="row">
         <Card className="card" border="dark" style={{ backgroundColor: '#EAEAEA' }}>
@@ -144,7 +160,7 @@ export default function Search() {
       </div>
 
       <div className="time_details" id='timeDetails'>
-        {!data1 && selectedType !== 0 && selectedOptions1 !== 0 && selectedOptions2 !== 0 ? <div style={{ textAlign: 'center' }}><h2>No data found</h2></div> : ""}
+        {!data1 && selectedType !== 0 && selectedOptions1 !== 0 && selectedOptions2 !== 0 ? <div style={{ textAlign: 'center' }}><h2>No Bus Available from {selectedOptions1.label} to {selectedOptions2.label} for type {selectedType.label}</h2></div> : ""}
         {
           search.length !== 0 && header
         }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./css/App.css";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -11,6 +11,7 @@ import Admin from './components/Admin';
 import Login from './components/Login';
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext"
+import ShowTime from './components/ShowTime';
 function App() { 
   return (
   
@@ -23,6 +24,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/Auth' element={<Login />}></Route>
           <Route path="/Admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
+          <Route path="/show" element={<ProtectedRoute><ShowTime/> </ProtectedRoute>} />
         </Routes>
       </UserAuthContextProvider>
     </Router>

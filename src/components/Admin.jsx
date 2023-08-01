@@ -13,7 +13,6 @@ import { option, type } from "./data";
 
 
 export default function Admin() {
-  const [id, setId] = useState('');
   const [fromPlace, setFromPlace] = useState('');
   function handleSelect1(data) {
     setFromPlace(data);
@@ -21,7 +20,7 @@ export default function Admin() {
   const [toPlace, setToPlace] = useState('');
   function handleSelect2(data) {
     setToPlace(data);
-    
+
   }
   const [busType, setBusType] = useState('');
   function handleType(data) {
@@ -31,6 +30,11 @@ export default function Admin() {
 
   const { logOut, user } = useUserAuth();
   const navigate = useNavigate();
+
+  const show = () => {
+    navigate('/show')
+  }
+
   const handleLogout = async () => {
     try {
       await logOut();
@@ -42,18 +46,12 @@ export default function Admin() {
   }
   const add = (res) => {
     try {
-      Axios.post(  "https://find-my-bus.onrender.com/insert",
-      {
-        id: id, fromPlace: fromPlace.value, toPlace: toPlace.value, busType: busType.value, busTime: busTime,
-      }).then(()=>{
-        swal("Inserted Succesfully", "", "success");
-      });
-      Axios.post("http://localhost:3030/insert",
-      {
-        id: id, fromPlace: fromPlace.value, toPlace: toPlace.value, busType: busType.value, busTime: busTime,
-      }).then(()=>{
-        swal("Inserted Succesfully", "", "success");
-      });
+      Axios.post("https://find-my-bus.onrender.com/insert",
+        {
+          fromPlace: fromPlace.value, toPlace: toPlace.value, busType: busType.value, busTime: busTime,
+        }).then(() => {
+          swal("Inserted Succesfully", "", "success");
+        });
     }
     catch (err) {
       res.send(err);
@@ -61,35 +59,7 @@ export default function Admin() {
     }
 
   };
-  
-  const update = () => {
-    Axios.put("https://find-my-bus.onrender.com/update",
-      {
-        id: id,
-        busTime: busTime.value,
-      }).then(()=>{
-        swal("Updated Succesfully", "", "success");
-      });
-    Axios.put("http://localhost:3030/update",
-      {
-        id: id,
-        busTime: busTime.value,
-      }).then(()=>{
-        swal("Updated Succesfully", "", "success");
-      });
-    
-  }
 
-  const deleted = () => {
-    console.log(id)
-    Axios.post('https://find-my-bus.onrender.com/delete', { id: id}).then(()=>{
-      swal("Deleted Succesfully", id , "success");
-    });
-    Axios.post('http://localhost:3030/delete', { id: id}).then(()=>{
-      swal("Deleted Succesfully", id , "success");
-    });
-    
-  }
   return (
     <>
 
@@ -100,56 +70,53 @@ export default function Admin() {
         <h1 className="bus">Bus Time Editing</h1>
         <Form autoComplete="off" className="Bus1">
           <Container>
-            <Form.Group className="m-2" controlId="formBasicText">
-              <Form.Label className="m-2">ID</Form.Label>
-              <Form.Control type="text" autoFocus required={true} placeholder="Enter id" onChange={(event) => { setId(event.target.value); }} />
-            </Form.Group>
             <Form.Group className="m-3" controlId="formBasicText">
               <Form.Label>From Place</Form.Label>
-                <Select
-                  options={option}
-                  placeholder="Select journey place"
-                  value={fromPlace}
-                  onChange={handleSelect1}
-                  isSearchable={true}
-                />               
-                
+              <Select
+                options={option}
+                placeholder="Select journey place"
+                value={fromPlace}
+                onChange={handleSelect1}
+                isSearchable={true}
+              />
+
               {/* <Form.Control type="text" required={true}   onChange={(event) => { setFromPlace(event.target.value); }} placeholder="Enter place"  /> */}
             </Form.Group>
 
             <Form.Group className="m-3" controlId="formBasicText">
               <Form.Label>To Place</Form.Label>
               <Select
-                  options={option}
-                  placeholder="Select destination place"
-                  value={toPlace}
-                  onChange={handleSelect2}
-                  isSearchable={true}
-                />
+                options={option}
+                placeholder="Select destination place"
+                value={toPlace}
+                onChange={handleSelect2}
+                isSearchable={true}
+              />
               {/* <Form.Control type="text" required={true} placeholder="Enter place" onChange={(event) => { setToPlace(event.target.value); }} /> */}
             </Form.Group>
 
             <Form.Group className="m-3" controlId="formBasicText">
               <Form.Label>Bus Type</Form.Label>
               <Select
-                  options={type}
-                  placeholder="Select type of bus"
-                  value={busType}
-                  onChange={handleType}
-                  isSearchable={true}
-                />
+                options={type}
+                placeholder="Select type of bus"
+                value={busType}
+                onChange={handleType}
+                isSearchable={true}
+              />
               {/* <Form.Control type="text" required={true} placeholder="Enter type" onChange={(event) => { setBusType(event.target.value); }} /> */}
             </Form.Group>
 
             <Form.Group className="m-3" controlId="formBasicText">
               <Form.Label>Bus Time</Form.Label>
-              <Form.Control type="text" required={true} placeholder="Enter time" onChange={(event) => { setBusTime(event.target.value); }} />
+              <Form.Control type="time" required={true} placeholder="set time" onChange={(event) => { setBusTime((event.target.value)); }} />
             </Form.Group>
             <center>
-              <Button className="but1" variant="primary" type="button"  onClick={add}>ADD</Button>
-              <Button className="but2" variant="info" type="button" title='id,time' onClick={update}>UPDATE</Button>
-              <Button className="but3" variant="danger" type="button" title='id' onClick={deleted}>DELETE</Button>
-              <Button variant="primary" type="button" onClick={handleLogout}>
+              <Button className="but1" variant="primary" type="button" onClick={add}>ADD</Button>
+              {/* <Button className="but2" variant="info" type="button" title='id,time' onClick={update}>UPDATE</Button> */}
+              {/* <Button className="but3" variant="danger" type="button" title='id' onClick={deleted}>DELETE</Button> */}
+              <Button className="but3" variant="success" type="button" onClick={show}>SHOW</Button>
+              <Button variant="danger" type="button" onClick={handleLogout}>
                 Log out
               </Button>
             </center>
